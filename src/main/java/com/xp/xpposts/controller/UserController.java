@@ -30,7 +30,7 @@ public class UserController {
     }
     @GetMapping("/user/get")
     public String get(){
-      return "sucefull-develop";
+      return "sucefull-develop-2";
     }
 
 }
