@@ -30,7 +30,7 @@ public class UserController {
     }
     @GetMapping("/user/get")
     public String get(){
-      return "successfull from deply";
+      return "successfull from deply-1";
     }
 
 }
