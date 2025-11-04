@@ -1,4 +1,5 @@
-FROM openjdk:17-jdk
+#FROM openjdk:17-jdk-alpine
+FROM openjdk:26-ea-trixie
 ARG JAR_FILE=build/libs/*.jar
 
 COPY ${JAR_FILE} xp-expenses.jar
