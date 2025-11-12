@@ -61,7 +61,7 @@ public class SecurityConfig {
                 .addFilterAfter(new JWTTokenGeneratorFilter(), BasicAuthenticationFilter.class)
                 .addFilterBefore(new JWTTokenValidatorFilter(), BasicAuthenticationFilter.class)
                 .formLogin(flc-> flc.disable())
-                .httpBasic(withDefaults());
+                .httpBasic(http -> http.disable())
         return http.build();
 //                .csrf(csrf -> csrf.disable())
 //                .authorizeHttpRequests(authorize -> authorize
