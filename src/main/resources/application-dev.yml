@@ -2,9 +2,9 @@ spring:
   application:
     name: xp-posts
   datasource:
-    url: jdbc:mysql://${jdbc_url}/${database}?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
-    username: ${username}
-    password: ${password}
+    url: jdbc:mysql://dev.adenali.com:3306/devdb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
