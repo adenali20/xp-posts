@@ -15,28 +15,6 @@ import software.amazon.awssdk.services.s3.presigner.S3Presigner;
 @Configuration
 public class S3Config {
 
-    // Inject the credentials and region from application.yml
-    @Value("${aws.s3.region}")
-    private String awsRegion;
-
-    @Value("${aws.accessKeyId}")
-    private String accessKey;
-
-    @Value("${aws.secretAccessKey}")
-    private String secretKey;
-
-    @Bean
-    public S3Client s3Client() {
-        // Manually create the credentials object
-        AwsBasicCredentials credentials = AwsBasicCredentials.create(accessKey, secretKey);
-
-        // Explicitly provide the credentials and region to the S3 Client builder
-        return S3Client.builder()
-                .region(Region.of(awsRegion))
-                .credentialsProvider(StaticCredentialsProvider.create(credentials)) // <--- Add this line
-                .build();
-    }
-
     @Bean
     public S3Presigner s3Presigner() {
         return S3Presigner.builder()
