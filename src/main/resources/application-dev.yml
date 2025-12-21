@@ -1,22 +1,36 @@
 spring:
+
   application:
     name: xp-posts
   datasource:
-    url: jdbc:mysql://${jdbc_url}/${database}?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
-    username: ${username}
-    password: ${password}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+      url: ${DB_URL}
+      username: ${DB_USERNAME}
+      password: ${DB_PASSWORD}
   jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL8Dialect
+
 
 un: dev
 server:
   port: 8050
+
+aws:
+  s3:
+    bucket-name: ${AWS_S3_BUCKET_NAME}
+    region: ${AWS_REGION}
+  accessKeyId: ${AWS_ACCESS_KEY_ID}
+  secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+  region: ${AWS_REGION}
+
+#sqs:
+#  # The full URL copied from the AWS SQS console
+#  queue-url: "https://sqs.us-east-2.amazonaws.com/338149548334/FileProcessingQueue"
+
 
 
 
