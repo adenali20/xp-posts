@@ -1,10 +1,7 @@
 package com.xp.xpposts.controller;
 
 import com.xp.xpposts.constants.ApplicationConstants;
-import com.xp.xpposts.model.LoginRequestDTO;
-import com.xp.xpposts.model.LoginResponseDTO;
-import com.xp.xpposts.model.SignupDto;
-import com.xp.xpposts.model.User;
+import com.xp.xpposts.model.*;
 import com.xp.xpposts.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
